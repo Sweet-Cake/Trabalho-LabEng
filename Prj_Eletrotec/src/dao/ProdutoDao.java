@@ -5,17 +5,19 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import model.Estoque;
+import model.Produto;
 
-public class EstoqueDao implements IEstoqueDao {
+public class ProdutoDao implements IProdutoDao {
 
 	@Override
-	public void insert(Estoque estoque) {
-		try {
+	public void insert(Produto produto) {
+		 try {
 			 Connection connection = (Connection) GenericDao.getInstance().getConnection();
-	            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO estoque "
-	            		+ "(qta) VALUES (?)");
-	            preparedStatement.setInt(1,  estoque.getQta());
+	            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO produto "
+	            		+ "(nome ,polegada, preco_unitario) VALUES (?, ?, ?)");
+	            preparedStatement.setString(1,  produto.getNome());
+	            preparedStatement.setInt(2, produto.getPolegada());
+	            preparedStatement.setDouble(3,  produto.getPreco_unitario());
 	            preparedStatement.executeUpdate();
 	            preparedStatement.close();
 	        } catch (SQLException | ClassNotFoundException e) {
@@ -25,7 +27,7 @@ public class EstoqueDao implements IEstoqueDao {
 	}
 
 	@Override
-	public List<Estoque> select() {
+	public List<Produto> select() {
 		// TODO Auto-generated method stub
 		return null;
 	}

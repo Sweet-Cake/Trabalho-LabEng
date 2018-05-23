@@ -8,7 +8,7 @@ public class Cliente {
 
 	private String celular;
 
-	private int CPF;
+	private String CPF;
 
 	private String logradouro;
 
@@ -42,11 +42,11 @@ public class Cliente {
 		this.celular = celular;
 	}
 
-	public int getCPF() {
+	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(int cPF) {
+	public void setCPF(String cPF) {
 		CPF = cPF;
 	}
 
