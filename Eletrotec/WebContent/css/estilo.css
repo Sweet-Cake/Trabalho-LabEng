@@ -1,0 +1,208 @@
+@charset "ISO-8859-1";
+*{
+	margin:0;
+	padding:0;
+}
+body {
+   background-image: url('http://breakawaystaffing.ca/wp-content/uploads/2016/03/Office-Refurb-2.jpg');
+  color:#525b6b;
+}
+body::before {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: #c0392b;
+  /* IE Fallback */
+  background: rgba(102, 112, 130, 0.6);
+  width: 100%;
+  height: 100%;
+}
+.contain{
+	width:400px;
+	height:250px;
+	border:1px solid #000;
+	background-color:transparent;
+	margin-top:10%;
+	margin-left:35%;
+	padding-top:2%;
+	border-radius:5px;
+}
+.contain2{
+	width:400px;
+	height:300px;
+	border:1px solid #000;
+	background-color:transparent;
+	margin-top:10%;
+	margin-left:35%;
+	padding-top:2%;
+	border-radius:5px;
+}
+.input_login,.quant,.nome,.tel,.cpf{
+	width:320px;
+	height:30px;
+	border-radius:5px;
+	border:1px solid #000;
+	margin-top:10%;
+	margin-left:10%;
+}
+.tel{
+	width:160px;
+	margin-left:5%;
+}
+.quant{
+	width:100px;
+	margin-left:10%;
+}
+.cpf{
+	width:160px;
+	margin-left:5%;
+}
+.nome{
+	width:300px;
+}
+.btn_entrar,.btn_entrar2{
+	width:150px;
+	height:35px;
+	margin-left:5%;
+	border:1px solid #000;
+	border-radius:5px;
+	margin-top:5%;
+}
+.btn_entrar:hover,.btn_entrar2:hover{
+	background-color:transparent;
+	cursor:pointer;
+}
+.btn_entrar2{
+	width:80px;
+}
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 3px solid #6e8396;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu ul {
+  background: #ffffff;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #6e8396;
+}
+.cont{
+	width:400px;
+	height:425px;
+	border:1px solid #000;
+	background-color:transparent;
+	margin-top:10%;
+	margin-left:35%;
+	padding-top:2%;
+	border-radius:5px;
+}
+
+.table{
+	font-family:century gothic;
+	color:#000;
+}
+.tabela{
+	margin-left:40%;
+	margin-top:5%;
+	border:1px solid #000;
+	overflow:auto;
+}
+label{
+	color:#000;
+	margin-left:19%;
+}
+select, option{
+	width:100px;
+	height:30px;
+	border-radius:5px;
+	border:1px solid #000;
+	margin-top:8%;
+}
