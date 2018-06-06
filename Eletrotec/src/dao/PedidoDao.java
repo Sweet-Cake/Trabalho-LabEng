@@ -51,7 +51,7 @@ public class PedidoDao {
 		return u;
 	}
 
-	public void AdicionaPedido(Pedido p, UtensilioPedido up, ProdutoPedido pp)
+	public void AdicionaPedido(Pedido p, UtensilioPedido[] up, ProdutoPedido [] pp)
 			throws ClassNotFoundException, SQLException {
 		Connection connection = (Connection) GenericDao.getInstance().getConnection();
 		PreparedStatement ps = connection.prepareStatement(
@@ -61,9 +61,28 @@ public class PedidoDao {
 		ps.setString(3, p.getCpf());
 		ps.setDouble(4, p.getPrecoFinal());
 		ps.executeQuery();
+		for (UtensilioPedido utp : up){
+			ps = connection.prepareStatement(
+					"INSERT INTO utensiliopedido (id_pedido ,id_utensilio,qtd_utensilio, precou ) VALUES (?, ?, ?, ?)");
+			ps.setInt(1, p.getIdPedido());
+			ps.setInt(2, utp.getId_utensilio());
+			ps.setInt(3, utp.getQta());
+			ps.setDouble(4, utp.getPreco_uni());
+			ps.executeQuery();
+		}
+		for (ProdutoPedido prp : pp){
+			ps = connection.prepareStatement(
+					"INSERT INTO produtopedido (id_pedido ,id_produto,qtd_produto, precop ) VALUES (?, ?, ?, ?)");
+			ps.setInt(1, p.getIdPedido());
+			ps.setInt(2, prp.getId_produto());
+			ps.setInt(3, prp.getQta());
+			ps.setDouble(4, prp.getPreco_uni());
+			ps.executeQuery();
+		}
+		ps.close();
 	}
 	
-	public void AlteraPedido(Pedido p, UtensilioPedido up, ProdutoPedido pp)
+	public void AlteraPedido(Pedido p, UtensilioPedido [] up, ProdutoPedido [] pp)
 			throws ClassNotFoundException, SQLException {
 		Connection connection = (Connection) GenericDao.getInstance().getConnection();
 		PreparedStatement ps = connection.prepareStatement(
@@ -71,6 +90,25 @@ public class PedidoDao {
 		ps.setString(1, p.getStatus());
 		ps.setInt(2, p.getIdPedido());
 		ps.executeQuery();
+		for (UtensilioPedido utp : up){
+			ps = connection.prepareStatement(
+					"INSERT INTO utensiliopedido (id_pedido ,id_utensilio,qtd_utensilio, precou ) VALUES (?, ?, ?, ?)");
+			ps.setInt(1, p.getIdPedido());
+			ps.setInt(2, utp.getId_utensilio());
+			ps.setInt(3, utp.getQta());
+			ps.setDouble(4, utp.getPreco_uni());
+			ps.executeQuery();
+		}
+		for (ProdutoPedido prp : pp){
+			ps = connection.prepareStatement(
+					"INSERT INTO produtopedido (id_pedido ,id_produto,qtd_produto, precop ) VALUES (?, ?, ?, ?)");
+			ps.setInt(1, p.getIdPedido());
+			ps.setInt(2, prp.getId_produto());
+			ps.setInt(3, prp.getQta());
+			ps.setDouble(4, prp.getPreco_uni());
+			ps.executeQuery();
+		}
+		ps.close();
 	}
 	
 }
